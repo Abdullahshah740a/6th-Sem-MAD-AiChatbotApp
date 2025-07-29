@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".MainActivity">
+
+    <!-- Top Bar -->
+    <LinearLayout
+        android:id="@+id/topBar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/background_top_banner"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Title Row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/close_24dp_e3e3e3_fill0_wght400_grad0_opsz24" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="39dp"
+                android:layout_height="39dp"
+                android:layout_marginStart="8dp"
+                android:src="@drawable/robot_2_24dp_e3e3e3_fill0_wght400_grad0_opsz24" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/bebusneue"
+                android:text="CHATTIFY"
+                android:textColor="@color/white"
+                android:textSize="35sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- RecyclerView for chat -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/background_content_top"
+        app:layout_constraintTop_toBottomOf="@id/topBar"
+        app:layout_constraintBottom_toTopOf="@id/messageContainer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:overScrollMode="always"
+        android:scrollbars="vertical"/>
+
+    <!-- Bottom Message Bar -->
+    <LinearLayout
+        android:id="@+id/messageContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <EditText
+            android:id="@+id/editTextText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:minHeight="48dp"
+            android:background="@drawable/background_chat_input"
+            android:hint="Type a message"
+            android:inputType="text"
+            android:padding="12dp"
+            android:layout_marginEnd="8dp"/>
+
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="41dp"
+            android:layout_height="39dp"
+            android:background="@drawable/rounder"
+            android:contentDescription="Send"
+            android:padding="16dp"
+            android:src="@drawable/send_24dp_e3e3e3_fill0_wght400_grad0_opsz24" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
